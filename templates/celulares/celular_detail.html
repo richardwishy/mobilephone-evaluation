@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Nombre: {{ celular.nombre }}</h1>
+
+    <p><strong>Materiales:</strong> {{ celular.materiales |floatformat:2}} </p>
+    <p><strong>Requisitos de uso de energía:</strong> {{ celular.uso_energia |floatformat:2}}</p>
+    <p><strong>Restricciones de sustancias en la batería del teléfono móvil:</strong> {{ celular.bateria |floatformat:2}}</p>
+    <p><strong>Gestión del final de la vida:</strong> {{ celular.final_vida |floatformat:2}}</p>
+    <p><strong>Embalaje y material impreso:</strong> {{ celular.embalaje |floatformat:2}}</p>
+    <p><strong>Prácticas corporativas:</strong> {{ celular.corporativo |floatformat:2}}</p>
+    <p><strong>Fabricación y operaciones:</strong> {{ celular.fabricacion |floatformat:2}}</p>
+    <p><strong>GENERAL:</strong> {{ celular.general |floatformat:2}}</p>
+    {% if user.is_authenticated %}
+        <a class="button btn btn-secondary" href="{{ celular.get_edit_url }}">EDITAR CALIFICACIÓN</a>
+    {% endif %}
+
+{% endblock %}
