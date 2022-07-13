@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-&7!-hnl5awdln9+2kv1=f)9ayd78&d*9jm1j+ra7ys5*cdhz%x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://mobilephone-evaluation.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,11 +78,19 @@ WSGI_APPLICATION = 'evaluacion_celulares.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#        'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'ciba',
+#     }
+# }
+
+import dj_database_url
+from decouple import config
 DATABASES = {
-       'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ciba',
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 
