@@ -28,7 +28,7 @@
             <td>{{ cel.embalaje }}</td>
             <td>{{ cel.corporativo }}</td>
             <td>{{ cel.fabricacion }}</td>
-            <td>{{ cel.general*100 |floatformat:2 }}</td>
+            <td>{{ cel.general |floatformat:2 }}</td>
             {% if user.is_authenticated %}
                 <td><a href="{{ cel.get_edit_url }}"><i class="fa fa-pencil-square-o"></i></a></td>
             {% endif %}

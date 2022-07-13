@@ -8,7 +8,7 @@
          <a href="{{ cel.get_absolute_url }}">
         <article class="leaderboard__profile">
      <span class="leaderboard__name">{{ cel.nombre }}</span>
-      <span class="leaderboard__value">{{ cel.general*100 |floatformat:2}}</span>
+      <span class="leaderboard__value">{{ cel.general |floatformat:2}}</span>
     </article>
          </a>
     {% endfor %}
